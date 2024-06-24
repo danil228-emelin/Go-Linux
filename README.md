@@ -55,3 +55,22 @@ sudo ./gontainer --chrt "[rootfs directory]]" run sh
 The command will run the sh command, which is the native
 bash command for the Alpine distro in a container. Replace [rootfs
 directory] with the directory containing the uncompressed Alpine roofs.
+
+
+The gosec project is an open source tool (https://github.com/securego/
+gosec) that provides security static code analysis. The tool provides a set
+of secure code best practices for the Go language, and it scans your source
+code to check if there is any code that breaks those rule.
+
+Use the following command to install it if you are using Go 1.16
+and above:
+go install github.com/securego/gosec/v2/cmd/gosec@latest
+Once installed, open your terminal and change the directory to
+chapter7/samplecode and execute the following command:
+gosec ./...
+
+The tool scans through all the .go files inside the directory recursively
+and, after completing the parsing and scanning process, prints out the
+final result.
+The tool is able to perform the code analysis by using the go/ast module
+similar to these examples.

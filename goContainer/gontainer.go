@@ -104,6 +104,7 @@ func run() {
 		Unshareflags: syscall.CLONE_NEWNS,
 	}
 	runcmd.Run()
+	
 }
 
 // This child function runs a command in a containerized
